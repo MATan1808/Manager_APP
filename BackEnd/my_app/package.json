@@ -1,0 +1,24 @@
+{
+    "author": "Your Name",
+    "description": "Ứng dụng Express với Morgan và Nodemon",
+    "license": "ISC",
+    "main": "server.js",
+    "name": "my-express-app",
+    "version": "1.0.0",
+    "dependencies": {
+        "bcryptjs": "^3.0.2",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "jsonwebtoken": "^9.0.2",
+        "morgan": "^1.10.0",
+        "mssql": "^11.0.1"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9"
+    },
+    "scripts": {
+        "dev": "node server.js",
+        "start": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
+}

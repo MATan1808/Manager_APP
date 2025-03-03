@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/res"/>
+    <qresource prefix="/">
+        <file>F:/anh/gif/GamingLogo.gif</file>
+        <file>LoginScreen.qml</file>
+    </qresource>
+</RCC>

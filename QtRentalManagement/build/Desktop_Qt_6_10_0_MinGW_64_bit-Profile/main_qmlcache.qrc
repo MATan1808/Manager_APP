@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<RCC>
+    <qresource prefix="/QML">
+        <file alias="Login.qml">../../Login.qml</file>
+        <file alias="Register.qml">../../Register.qml</file>
+        <file alias="main.qml">../../main.qml</file>
+    </qresource>
+</RCC>

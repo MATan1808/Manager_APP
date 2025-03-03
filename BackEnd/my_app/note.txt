@@ -1,0 +1,58 @@
+//PS D:\Official_Project\Project_QT_BANK\BackEnd\my-express-app> npm start
+//C:\Windows\SysWOW64\SQLServerManager16.msc
+//npm install express mssql bcryptjs jsonwebtoken dotenv cài đặt mssql
+//npm install mssql dotenv 
+npm install express mssql dotenv
+npm init -y
+npm install express jsonwebtoken dotenv body-parser mssql bcryptjs cors
+ express: Framework Node.js
+📝 jsonwebtoken: Xử lý JWT cho đăng nhập
+📝 mssql: Kết nối SQL Server
+📝 bcryptjs: Mã hóa mật khẩu
+
+mssql: thư viện giúp Node.js kêts nối với SQL Server
+dotenv: Quản lý biến môi trường (.nv file), giúp bảo mật thông tin kết nối database 
+
+✔ Đã xây dựng API đăng ký và đăng nhập với Node.js + Express + SQL Server
+✔ Sử dụng bcryptjs để mã hóa mật khẩu
+✔ Sử dụng jsonwebtoken (JWT) để tạo token
+✔ API bảo mật và dễ mở rộng 🚀
+
+
+JWT (JSON Web Token) 
+là một phương thức xác thực an toàn dùng để quản lý đăng nhập và bảo mật API. 
+Sau khi người dùng đăng nhập thành công, server sẽ tạo một JWT token và gửi về cho client. 
+Token này sẽ được client sử dụng trong các request tiếp theo để xác minh danh tính mà không cần đăng nhập lại.
+
+Kết nối SQL server cho Node.js
+
+cách 1 tạo database server ở SSMS và cài đặt 
+//npm install express mssql bcryptjs jsonwebtoken dotenv cài đặt mssql
+//npm install mssql dotenv 
+
+cách 2 tạo file .env để lưu thông tin kết nối 
+
+DB_USER=sa                # Tài khoản SQL Server (Mặc định là 'sa' nếu cài local)
+DB_PASSWORD=yourpassword  # Mật khẩu SQL Server
+DB_SERVER=localhost       # Địa chỉ server (Local: localhost hoặc 127.0.0.1)
+DB_DATABASE=personal_expense_manager  # Tên database bạn đã tạo
+DB_PORT=1433             # Cổng mặc định của SQL Server
+DB_ENCRYPT=false         # KhS
+
+
+cấu trúc folder 
+📂 Cấu trúc thư mục mới
+📂 my-express-app
+├── 📄 server.js # File chính để chạy server
+├── 📄 connectDB.js # Kết nối SQL Server
+├── 📂 routes # Chứa các route API
+│ ├── 📄 authRoutes.js # Routes cho đăng ký & đăng nhập
+│ ├── 📄 protectedRoutes.js # 📌 Thêm route bảo vệ
+├── 📂 controllers # Chứa các hàm xử lý logic
+│ ├── 📄 authController.js # Xử lý đăng ký & đăng nhập
+├── 📂 middleware # 📌 Thư mục chứa middleware
+│ ├── 📄 authMiddleware.js # 📌 Middleware kiểm tra JWT
+├── 📂 models # Chứa các truy vấn SQL
+│ ├── 📄 userModel.js # Xử lý database liên quan đến user
+├── 📄 .env # Chứa thông tin bảo mật như DB_USER, JWT_SECRET
+├── 📄 package.json # Danh sách thư viện cài đặt
