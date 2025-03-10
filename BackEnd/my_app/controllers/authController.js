@@ -85,7 +85,17 @@ async function login(req, res) {
         }
 
         // 🔑 Tạo token JWT
-        const token = jwt.sign({ id: user.id, username: user.username }, JWT_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({
+            id: user.id,
+            username: user.username,
+            account_number: user.account_number // ✅ Thêm account_number vào token
+        }, JWT_SECRET, { expiresIn: "1h" });
+
+        // ✅ Lưu token vào database
+        await pool.request()
+            .input("account_number_user", sql.VarChar, user.account_number)
+            .input("token", sql.NVarChar, token)
+            .query("UPDATE accounts SET token = @token WHERE account_number_user = @account_number_user");
 
         return res.json({ message: "Đăng nhập thành công", token });
 
